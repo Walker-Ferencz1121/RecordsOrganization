@@ -23,65 +23,67 @@ import com.data.dataOrganizer.services.RecordsService;
 public class RecordsController {
 
 	@Autowired
-	private RecordsService recordsService;
+	private RecordsService RecordsService;
 	
 	@Autowired
-	private RecordsRepository recordsRepository;
+	private RecordsRepository RecordsRepository;
 	
-	// display list of records
+	// display list of Records
 	//@GetMapping("/")
 	@RequestMapping(value="/", method = {RequestMethod.GET, RequestMethod.POST})
 	public String viewHomePage(Model model, String title) { //added in title!
-		return findPaginated(1, "title", "asc", model);		
+		return findPaginated(1, "name", "asc", model);		
 	}
 	
 	//@GetMapping("/showNewRecordsForm")
 	@RequestMapping(value="/showNewRecordsForm", method = {RequestMethod.GET, RequestMethod.POST})
 	public String showNewRecordsForm(Model model) {
-		// create model attribute to bind form records
-		Records records = new Records();
-		model.addAttribute("records", records);
-		return "new_records";
+		// create model attribute to bind form data
+		Records Records = new Records();
+		model.addAttribute("Records", Records);
+		return "new_Records";
 	}
 		
 	@PostMapping("/saveRecords")
-	public String saveRecords(@ModelAttribute("records") Records records) {
-		// save records to database
-		recordsService.saveRecords(records);
+	public String saveRecords(@ModelAttribute("Records") Records Records) {
+		// save Records to database
+		RecordsService.saveRecords(Records);
 		return "redirect:/";
 	}
 	
 	@GetMapping("/showFormForUpdate/{id}")
 	public String showFormForUpdate(@PathVariable ( value = "id") long id, Model model) {
 		
-		// get records from the service
-		Records records = recordsService.getRecordsById(id);
+		// get Records from the service
+		Records Records = RecordsService.getRecordsById(id);
 		
-		// set records as a model attribute to pre-populate the form
-		model.addAttribute("records", records);
-		return "update_records";
+		// set Records as a model attribute to pre-populate the form
+		model.addAttribute("Records", Records);
+		return "update_Records";
 	}
 	
 	@GetMapping("/deleteRecords/{id}")
 	public String deleteRecords(@PathVariable (value = "id") long id) {
 		
-		// call delete records method 
-		this.recordsService.deleteRecordsById(id);
+		// call delete Records method 
+		this.RecordsService.deleteRecordsById(id);
 		return "redirect:/";
 	}
 	
 	
-	@GetMapping("/page/{pageNo}")
+	//@GetMapping("/page/{pageNo}")
+	@RequestMapping(value="/page/{pageNo}", method= {RequestMethod.GET, RequestMethod.POST})
 	public String findPaginated(@PathVariable (value = "pageNo") int pageNo, 
 			@RequestParam("sortField") String sortField,
 			@RequestParam("sortDir") String sortDir,
+			//@Param("keyword") String keyword,
 			Model model) {
 		
 		int pageSize = 50;
 		
-		model.addAttribute("records", new Records());
+		model.addAttribute("Records", new Records());
 		
-		Page<Records> page = recordsService.findPaginated(pageNo, pageSize, sortField, sortDir);
+		Page<Records> page = RecordsService.findPaginated(pageNo, pageSize, sortField, sortDir);
 		List<Records> listRecords = page.getContent();
 		
 		model.addAttribute("currentPage", pageNo);
@@ -93,34 +95,39 @@ public class RecordsController {
 		model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
 		
 		model.addAttribute("listRecords", listRecords);
+		
+//		List<Records> foundRecords = RecordsService.search(keyword);
+//		
+//		model.addAttribute("keyword", keyword);
+//		model.addAttribute("foundRecords", foundRecords);
         
 		return "index";
 	}
 	
-    @GetMapping("/recordsSearch")
-    public String recordsSearch(Model model) {
-    	
-        model.addAttribute("records", new Records());
-        
-    	String page = findPaginated(1, "title", "asc", model);
-    	model.addAttribute("page", page);
-    	
-    	List<Records> listRecords = recordsRepository.findAll();
-    	model.addAttribute("listRecords", listRecords);
-
-        return "recordsSearch";
-    }
-    
-    //for full-text search, you must alter table within MySQL and add index name "full_text_search_idx" with FULLTEXT as type
-	
-	@PostMapping("/recordsSearch")
-	public String recordsSearch(@Param("keyword") String keyword, Model model) {
-		
-		List<Records> foundRecords = recordsService.search(keyword);
-		
-		model.addAttribute("keyword", keyword);
-		model.addAttribute("foundRecords", foundRecords);
-		
-		return "recordsSearch";
-	}
+//    @GetMapping("/RecordsSearch")
+//    public String RecordsSearch(Model model) {
+//    	
+//      model.addAttribute("Records", new Records());
+//        
+//    	String page = findPaginated(1, "title", "asc", model);
+//    	model.addAttribute("page", page);
+//    	
+//    	List<Records> listRecords = RecordsRepository.findAll();
+//    	model.addAttribute("listRecords", listRecords);
+//
+//        return "RecordsSearch";
+//    }
+//    
+//    //for full-text search, you must alter table within MySQL and add index name "full_text_search_idx" with FULLTEXT as type
+//	
+//	@PostMapping("/RecordsSearch")
+//	public String RecordsSearch(@Param("keyword") String keyword, Model model) {
+//		
+//		List<Records> foundRecords = RecordsService.search(keyword);
+//		
+//		model.addAttribute("keyword", keyword);
+//		model.addAttribute("foundRecords", foundRecords);
+//		
+//		return "RecordsSearch";
+//	}
 }

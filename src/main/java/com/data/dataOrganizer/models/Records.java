@@ -17,67 +17,67 @@ public class Records {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	public long id;
 	
 	@Column(name="date")
-	private Date date;
+	public Date date;
 	
 	@Column(name="name")
-	private String name;
+	public String name;
 	
 	@Column(name="phoneNum")
-	private int phoneNum;
+	public String phoneNum;
 	
 	@Column(name="vehLocation")
-	private String vehLocation;
+	public String vehLocation;
 	
-	@Column(name="year")
-	private int year;
+	@Column(name="vehYear")
+	public String vehYear;
 	
 	@Column(name="make")
 	//Make this into drop down box with common makes
-	private String make;
+	public String make;
 	
 	@Column(name="model")
 	//Make this into drop down box based off of make
-	private String model;
+	public String model;
 	
 	@Column(name="color")
-	private String color;
+	public String color;
 	
-	@Column(name="vehIdNum")
-	private int vehIdNum;
+	@Column(name="VIN")
+	public String VIN;
 	
 	@Column(name="vehTowedTo")
-	private String vehTowedTo;
+	public String vehTowedTo;
 	
 	@Column(name="paymentType")
-	private String paymentType;
+	public String paymentType;
 	
 	@Column(name="operatorSignature")
-	private String operatorSignature;
+	public String operatorSignature;
 	
 	@Column(name="total")
-	private int total;
+	public int total;
 	
 	@Autowired
 	public Records() {
 		
 	}
 
-	public Records(long id, Date date, String name, int phoneNum, String vehLocation, int year, String make, String model,
-			String color, int vehIdNum, String vehTowedTo, String paymentType, String operatorSignature, int total) {
+	public Records(long id, Date date, String name, String phoneNum, String vehLocation, String vehYear, String make, String model,
+			String color, String VIN, String vehTowedTo, String paymentType, String operatorSignature, int total) {
 		super();
 		this.id = id;
 		this.date = date;
 		this.name = name;
 		this.phoneNum = phoneNum;
 		this.vehLocation = vehLocation;
-		this.year = year;
+		this.vehYear = vehYear;
 		this.make = make;
 		this.model = model;
 		this.color = color;
-		this.vehIdNum = vehIdNum;
+		this.VIN = VIN;
 		this.vehTowedTo = vehTowedTo;
 		this.paymentType = paymentType;
 		this.operatorSignature = operatorSignature;
@@ -108,11 +108,11 @@ public class Records {
 		this.name = name;
 	}
 
-	public int getPhoneNum() {
+	public String getPhoneNum() {
 		return phoneNum;
 	}
 
-	public void setPhoneNum(int phoneNum) {
+	public void setPhoneNum(String phoneNum) {
 		this.phoneNum = phoneNum;
 	}
 
@@ -124,12 +124,12 @@ public class Records {
 		this.vehLocation = vehLocation;
 	}
 
-	public int getYear() {
-		return year;
+	public String getYear() {
+		return vehYear;
 	}
 
-	public void setYear(int year) {
-		this.year = year;
+	public void setYear(String vehYear) {
+		this.vehYear = vehYear;
 	}
 
 	public String getMake() {
@@ -156,12 +156,12 @@ public class Records {
 		this.color = color;
 	}
 
-	public int getVehIdNum() {
-		return vehIdNum;
+	public String getVehIdNum() {
+		return VIN;
 	}
 
-	public void setVehIdNum(int vehIdNum) {
-		this.vehIdNum = vehIdNum;
+	public void setVehIdNum(String VIN) {
+		this.VIN = VIN;
 	}
 
 	public String getVehTowedTo() {
@@ -199,8 +199,8 @@ public class Records {
 	@Override
 	public String toString() {
 		return "Records [id=" + id + ", date=" + date + ", name=" + name + ", phoneNum=" + phoneNum + ", vehLocation="
-				+ vehLocation + ", year=" + year + ", make=" + make + ", model=" + model + ", color=" + color
-				+ ", vehIdNum=" + vehIdNum + ", vehTowedTo=" + vehTowedTo + ", paymentType=" + paymentType
+				+ vehLocation + ", vehYear=" + vehYear + ", make=" + make + ", model=" + model + ", color=" + color
+				+ ", VIN=" + VIN + ", vehTowedTo=" + vehTowedTo + ", paymentType=" + paymentType
 				+ ", operatorSignature=" + operatorSignature + ", total=" + total + "]";
 	}
 }

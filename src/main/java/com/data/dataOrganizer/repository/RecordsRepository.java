@@ -13,5 +13,5 @@ public interface RecordsRepository extends JpaRepository<Records, Long>{
 	
 	//@Query(value = "SELECT * FROM books WHERE MATCH(title, author) AGAINST(?1)",
 			//nativeQuery = true)
-	List<Records> search(String keyword);
+	//List<Records> search(String keyword);
 }

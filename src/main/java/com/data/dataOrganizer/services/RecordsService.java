@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import com.data.dataOrganizer.models.Records;
 import com.data.dataOrganizer.repository.RecordsRepository;
 
-
 @Service
 public class RecordsService {
 
@@ -58,7 +57,7 @@ public class RecordsService {
 		return this.recordsRepository.findAll(pageable);
 	}
 	
-	public List<Records> search(String keyword) {
-		return recordsRepository.search(keyword);
-	}
+//	public List<Records> search(String keyword) {
+//		return recordsRepository.search(keyword);
+//	}
 }
