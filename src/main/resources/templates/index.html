@@ -9,14 +9,14 @@
     </head>
     <body>
     
-        <form class="form-inline my-2 my-lg-0" th:action="@{/booksSearch}" method="post">
+        <form class="form-inline my-2 my-lg-0" th:action="@{/}" method="post">
                 <input type="search" name="keyword" size="50" class="form-control mr-sm-2" placeholder="Search" required />
                 <input type="submit" value="Search" class="btn btn-outline-success my-2 my-sm-0" />
         </form>
     
         <!--<div id="navbar">
           <a th:href="@{/}">Home</a>
-          <a th:href="@{/booksSearch}">Search</a>
+          <a th:href="@{/recordsSearch}">Search</a>
           <a th:href="@{/showNewBooksForm}">Add Book</a>
         </div>-->
     
@@ -30,6 +30,11 @@
                     <th>Year</th>
                 </tr>
             </thead>
+            <tbody>
+                <tr th:each="records:${foundRecords}">
+                    <td th:text="${records.name}"></td>
+                    <td th:text="${records.phoneNum}"></td>
+            </tbody>
             <tbody>
 				<tr th:each="records:${listRecords}">
 					<td th:text="${records.name}"></td>

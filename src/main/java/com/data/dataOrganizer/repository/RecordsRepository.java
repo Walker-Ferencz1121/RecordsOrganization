@@ -11,7 +11,7 @@ import com.data.dataOrganizer.models.Records;
 @Repository
 public interface RecordsRepository extends JpaRepository<Records, Long>{
 	
-	//@Query(value = "SELECT * FROM books WHERE MATCH(title, author) AGAINST(?1)",
-			//nativeQuery = true)
-	//List<Records> search(String keyword);
+	@Query(value = "SELECT * FROM records WHERE MATCH(name) AGAINST(?1)",
+			nativeQuery = true)
+	List<Records> search(String keyword);
 }

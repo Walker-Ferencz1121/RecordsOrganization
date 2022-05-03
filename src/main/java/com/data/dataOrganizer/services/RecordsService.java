@@ -57,7 +57,7 @@ public class RecordsService {
 		return this.recordsRepository.findAll(pageable);
 	}
 	
-//	public List<Records> search(String keyword) {
-//		return recordsRepository.search(keyword);
-//	}
+	public List<Records> search(String keyword) {
+		return recordsRepository.search(keyword);
+	}
 }
