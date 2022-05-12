@@ -47,17 +47,6 @@ public class RecordsService {
 			Sort.by(sortField).descending();
 		
 		Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
-		
 		return this.recordsRepository.findAll(pageable);
-	}
-	
-	public Page<Records> findPaginated(int pageNo, int pageSize) {
-		Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
-		
-		return this.recordsRepository.findAll(pageable);
-	}
-	
-	public List<Records> search(String keyword) {
-		return recordsRepository.search(keyword);
 	}
 }
