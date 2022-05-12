@@ -49,4 +49,8 @@ public class RecordsService {
 		Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
 		return this.recordsRepository.findAll(pageable);
 	}
+	
+	public List<Records> search(String keyword) {
+		return recordsRepository.search(keyword);
+	}
 }

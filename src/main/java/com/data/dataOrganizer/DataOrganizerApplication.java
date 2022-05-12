@@ -9,5 +9,4 @@ public class DataOrganizerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DataOrganizerApplication.class, args);
 	}
-
 }
