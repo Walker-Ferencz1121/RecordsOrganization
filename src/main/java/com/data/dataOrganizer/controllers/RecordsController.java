@@ -54,7 +54,7 @@ public class RecordsController {
 	}
 	
 	@GetMapping("/showFormForUpdate/{id}")
-	public String showFormForUpdate(@PathVariable ( value = "id") long id, Model model) {
+	public String showFormForUpdate(@PathVariable (value = "id") long id, Model model) {
 		
 		// get records from the service
 		Records records = recordsService.getRecordsById(id);
@@ -62,6 +62,16 @@ public class RecordsController {
 		// set records as a model attribute to pre-populate the form
 		model.addAttribute("records", records);
 		return "update_records";
+	}
+	
+	@GetMapping("/extraInfo/{id}")
+	public String extraInfoRecords(@PathVariable (value = "id") long id, Model model) {
+		
+		Records records = recordsService.getRecordsById(id);
+		
+		model.addAttribute("records", records);
+		
+		return "extra_info";
 	}
 	
 	@GetMapping("/deleteRecords/{id}")
