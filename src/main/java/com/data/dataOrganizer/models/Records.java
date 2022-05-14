@@ -16,25 +16,67 @@ public class Records {
 	@GeneratedValue(strategy =  GenerationType.AUTO)
 	private long id;
 	
+	@Column(name = "date")
+	private String date;
+	
 	@Column(name = "name")
 	private String name;
+	
+	@Column(name = "phone_num")
+	private String phoneNum;
+	
+	@Column(name = "veh_location")
+	private String vehLocation;
 	
 	@Column(name = "veh_year")
 	private String vehYear;
 	
-	@Column(name = "phone_num")
-	private String phoneNum;
+	@Column(name = "veh_make")
+	private String vehMake;
+	
+	@Column(name = "veh_model")
+	private String vehModel;
+	
+	@Column(name = "veh_color")
+	private String vehColor;
+	
+	@Column(name = "veh_id_num")
+	private String vehIdNum;
+	
+	@Column(name = "veh_towed_to")
+	private String vehTowedTo;
+	
+	@Column(name = "payment")
+	private String payment;
+	
+	@Column(name = "op_signature")
+	private String opSignature;
+	
+	@Column(name = "total")
+	private String total;
 
 	public Records() {
 		
 	}
 
-	public Records(long id, String name, String vehYear, String phoneNum) {
+	public Records(long id, String date, String name, String phoneNum, String vehLocation, String vehYear,
+			String vehMake, String vehModel, String vehColor, String vehIdNum, String vehTowedTo, String payment,
+			String opSignature, String total) {
 		super();
 		this.id = id;
+		this.date = date;
 		this.name = name;
-		this.vehYear = vehYear;
 		this.phoneNum = phoneNum;
+		this.vehLocation = vehLocation;
+		this.vehYear = vehYear;
+		this.vehMake = vehMake;
+		this.vehModel = vehModel;
+		this.vehColor = vehColor;
+		this.vehIdNum = vehIdNum;
+		this.vehTowedTo = vehTowedTo;
+		this.payment = payment;
+		this.opSignature = opSignature;
+		this.total = total;
 	}
 
 	public long getId() {
@@ -45,12 +87,36 @@ public class Records {
 		this.id = id;
 	}
 
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getPhoneNum() {
+		return phoneNum;
+	}
+
+	public void setPhoneNum(String phoneNum) {
+		this.phoneNum = phoneNum;
+	}
+
+	public String getVehLocation() {
+		return vehLocation;
+	}
+
+	public void setVehLocation(String vehLocation) {
+		this.vehLocation = vehLocation;
 	}
 
 	public String getVehYear() {
@@ -61,12 +127,68 @@ public class Records {
 		this.vehYear = vehYear;
 	}
 
-	public String getPhoneNum() {
-		return phoneNum;
+	public String getVehMake() {
+		return vehMake;
 	}
 
-	public void setPhoneNum(String phoneNum) {
-		this.phoneNum = phoneNum;
+	public void setVehMake(String vehMake) {
+		this.vehMake = vehMake;
+	}
+
+	public String getVehModel() {
+		return vehModel;
+	}
+
+	public void setVehModel(String vehModel) {
+		this.vehModel = vehModel;
+	}
+
+	public String getVehColor() {
+		return vehColor;
+	}
+
+	public void setVehColor(String vehColor) {
+		this.vehColor = vehColor;
+	}
+
+	public String getVehIdNum() {
+		return vehIdNum;
+	}
+
+	public void setVehIdNum(String vehIdNum) {
+		this.vehIdNum = vehIdNum;
+	}
+
+	public String getVehTowedTo() {
+		return vehTowedTo;
+	}
+
+	public void setVehTowedTo(String vehTowedTo) {
+		this.vehTowedTo = vehTowedTo;
+	}
+
+	public String getPayment() {
+		return payment;
+	}
+
+	public void setPayment(String payment) {
+		this.payment = payment;
+	}
+
+	public String getOpSignature() {
+		return opSignature;
+	}
+
+	public void setOpSignature(String opSignature) {
+		this.opSignature = opSignature;
+	}
+
+	public String getTotal() {
+		return total;
+	}
+
+	public void setTotal(String total) {
+		this.total = total;
 	}
 	
 	
