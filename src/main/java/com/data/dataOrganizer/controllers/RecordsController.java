@@ -68,7 +68,7 @@ public class RecordsController {
 	public String extraInfoRecords(@PathVariable (value = "id") long id, Model model) {
 		
 		Records records = recordsService.getRecordsById(id);
-		
+				
 		model.addAttribute("records", records);
 		
 		return "extra_info";
