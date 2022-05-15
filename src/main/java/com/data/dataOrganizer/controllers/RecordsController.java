@@ -31,9 +31,11 @@ public class RecordsController {
 	@PostMapping("/")
 	public String viewHomePage(@Param("keyword") String keyword, Model model) {
 		List<Records> foundRecords = recordsService.search(keyword);
+		//Records records = recordsService.getRecordsById(id);
 		
 		model.addAttribute("keyword", keyword);
 		model.addAttribute("foundRecords", foundRecords);
+		//model.addAttribute("records", records);
 		
 		return "index";
 	}
@@ -55,7 +57,6 @@ public class RecordsController {
 	
 	@GetMapping("/showFormForUpdate/{id}")
 	public String showFormForUpdate(@PathVariable (value = "id") long id, Model model) {
-		
 		// get records from the service
 		Records records = recordsService.getRecordsById(id);
 		
@@ -65,8 +66,7 @@ public class RecordsController {
 	}
 	
 	@GetMapping("/extraInfo/{id}")
-	public String extraInfoRecords(@PathVariable (value = "id") long id, Model model) {
-		
+	public String extraInfoRecords(@PathVariable (value = "id") long id, Model model) {	
 		Records records = recordsService.getRecordsById(id);
 				
 		model.addAttribute("records", records);
@@ -76,7 +76,6 @@ public class RecordsController {
 	
 	@GetMapping("/deleteRecords/{id}")
 	public String deleteRecords(@PathVariable (value = "id") long id) {
-		
 		// call delete records method 
 		this.recordsService.deleteRecordsById(id);
 		return "redirect:/";

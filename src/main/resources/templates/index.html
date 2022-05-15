@@ -42,7 +42,7 @@
 				</tbody>
 				<tbody>
 				    <tr th:each="records : ${foundRecords}">
-                       <td><a th:href="@{/extraInfo}" th:text="${records.name}"></a></td>
+					   <td><a th:href="@{/extraInfo/{id} (id=${records.id})}" th:text="${records.name}"></a></td>
 			           <td th:text="${records.date}"></td>
 			           <td th:text="${records.phoneNum}"></td>
 			           <td><a th:href="@{/showFormForUpdate/{id}(id=${records.id})}" class="btn btn-primary">Update</a>
