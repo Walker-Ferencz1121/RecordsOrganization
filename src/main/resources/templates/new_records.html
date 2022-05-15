@@ -13,47 +13,41 @@
 			<hr>
 			<h2>Save Records</h2>
 	
-			<form action="#" th:action="@{/saveRecords}" th:object="${records}"
-				method="POST">
-				<input type="text" th:field="*{name}"
-					placeholder="Name of Client" class="form-control mb-4 col-4">
+			<form action="#" th:action="@{/saveRecords}" th:object="${records}" method="POST">
+				
+				<input type="text" th:field="*{name}" placeholder="Name of Client" class="form-control mb-4 col-4">
 					
-					<input type="text" th:field="*{date}"
-					placeholder="Date" class="form-control mb-4 col-4">
-					
-					<input type="text" th:field="*{phoneNum}"
-					placeholder="Client Phone Number" class="form-control mb-4 col-4">
-					
-					<input type="text" th:field="*{vehLocation}"
-					placeholder="Location of Vehicle" class="form-control mb-4 col-4">
-					
-					<input type="text" th:field="*{vehYear}"
-					placeholder="Year of Vehicle" class="form-control mb-4 col-4">
-					
-					<!-- Drop down box for make and model -->
-					<input type="text" th:field="*{vehMake}"
-					placeholder="Vehicle Make" class="form-control mb-4 col-4"> 
-					
-					<input type="text" th:field="*{vehModel}"
-					placeholder="Vehicle Model" class="form-control mb-4 col-4">
-					
-					<input type="text" th:field="*{vehColor}"
-					placeholder="Vehicle Color" class="form-control mb-4 col-4">
-					
-					<input type="text" th:field="*{vehIdNum}"
-					placeholder="Vehicle ID Number" class="form-control mb-4 col-4">
-					
-					<input type="text" th:field="*{vehTowedTo}"
-					placeholder="Vehicle Towed To" class="form-control mb-4 col-4">
-					
-					<input type="text" th:field="*{payment}"
-					placeholder="Form of Payment" class="form-control mb-4 col-4"> <!-- drop down box -->
-					
-					<input type="text" th:field="*{opSignature}"
-					placeholder="Operator Signature" class="form-control mb-4 col-4">
-					
-					<input type="text" th:field="*{total}"
-					placeholder="Total: $" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{date}" placeholder="Date" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{phoneNum}" placeholder="Client Phone Number" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{vehLocation}" placeholder="Location of Vehicle" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{vehYear}" placeholder="Year of Vehicle" class="form-control mb-4 col-4">
+				
+				<!-- Drop down box for make and model -->
+				<input type="text" th:field="*{vehMake}" placeholder="Vehicle Make" class="form-control mb-4 col-4"> 
+				
+				<input type="text" th:field="*{vehModel}" placeholder="Vehicle Model" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{vehColor}" placeholder="Vehicle Color" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{vehIdNum}" placeholder="Vehicle ID Number" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{vehTowedTo}" placeholder="Vehicle Towed To" class="form-control mb-4 col-4">
+				
+				<!--<input type="text" th:field="*{payment}" placeholder="Form of Payment" class="form-control mb-4 col-4"> <!-- drop down box -->
+				
+				<input type="text" th:field="*{opSignature}" placeholder="Operator Signature" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{total}" placeholder="Total: $" class="form-control mb-4 col-4">
+				
+				<select name="payment" id="payment" th:field="*{payment}">
+					<option value="">Payment Type</option>
+					<option value="Cash">Cash</option>
+					<option value="Credit">Credit</option>
+					<option value="Check">Check</option>
+				</select>
 					
 					<button type="submit" class="btn btn-info col-2"> Save Records</button>
 			</form>

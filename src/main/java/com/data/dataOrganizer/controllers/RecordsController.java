@@ -28,14 +28,13 @@ public class RecordsController {
 		return findPaginated(1, "name", "asc", model);		
 	}
 	
+	//For full text search through MySQL, go to indexes and type in full_text_search_idx and select FULLTEXT followed by the categories you would like to search by
 	@PostMapping("/")
 	public String viewHomePage(@Param("keyword") String keyword, Model model) {
 		List<Records> foundRecords = recordsService.search(keyword);
-		//Records records = recordsService.getRecordsById(id);
 		
 		model.addAttribute("keyword", keyword);
 		model.addAttribute("foundRecords", foundRecords);
-		//model.addAttribute("records", records);
 		
 		return "index";
 	}
