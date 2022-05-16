@@ -38,11 +38,16 @@
 				
 				<input type="text" th:field="*{vehTowedTo}" class="form-control mb-4 col-4">
 				
-				<input type="text" th:field="*{payment}" class="form-control mb-4 col-4">
-				
 				<input type="text" th:field="*{opSignature}" class="form-control mb-4 col-4">
 				
 				<input type="text" th:field="*{total}" class="form-control mb-4 col-4">
+				
+				<select name="payment" id="payment" th:field="*{payment}">
+                    <option value="">Payment Type</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Credit">Credit</option>
+                    <option value="Check">Check</option>
+                </select>
 				
 		 		<button type="submit" class="btn btn-info col-2"> Update Records</button>
 			</form>
