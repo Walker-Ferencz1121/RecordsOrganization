@@ -38,7 +38,7 @@
                 </thead>
                 <tbody>
                     <tr th:each="records : ${records}">
-                        <td th:text="${records.name}"></td>
+                        <td th:text="${records.firstName + ' ' + records.lastName}"></td>
                         <td th:text="${records.vehLocation}"></td>
                         <td th:text="${records.vehYear}"></td>
                         <td th:text="${records.vehMake}"></td>

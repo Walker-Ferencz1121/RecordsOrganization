@@ -19,8 +19,11 @@ public class Records {
 	@Column(name = "date")
 	private String date;
 	
-	@Column(name = "name")
-	private String name;
+	@Column(name = "first_name")
+	private String firstName;
+	
+	@Column(name = "last_name")
+	private String lastName;
 	
 	@Column(name = "phone_num")
 	private String phoneNum;
@@ -59,13 +62,14 @@ public class Records {
 		
 	}
 
-	public Records(long id, String date, String name, String phoneNum, String vehLocation, String vehYear,
+	public Records(long id, String date, String firstName, String lastName, String phoneNum, String vehLocation, String vehYear,
 			String vehMake, String vehModel, String vehColor, String vehIdNum, String vehTowedTo, String payment,
 			String opSignature, String total) {
 		super();
 		this.id = id;
 		this.date = date;
-		this.name = name;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.phoneNum = phoneNum;
 		this.vehLocation = vehLocation;
 		this.vehYear = vehYear;
@@ -95,12 +99,20 @@ public class Records {
 		this.date = date;
 	}
 
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getPhoneNum() {

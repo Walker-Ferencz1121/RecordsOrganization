@@ -25,7 +25,7 @@ public class RecordsController {
 	// display list of records
 	@GetMapping("/")
 	public String viewHomePage(Model model) {
-		return findPaginated(1, "name", "asc", model);		
+		return findPaginated(1, "firstName", "asc", model);		
 	}
 	
 	//For full text search through MySQL, go to indexes and type in full_text_search_idx and select FULLTEXT followed by the categories you would like to search by
