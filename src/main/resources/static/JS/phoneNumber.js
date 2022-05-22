@@ -2,7 +2,7 @@
  * 
  */
 	var isShift = false;
-	var seperator = "/";
+	var seperator = "-";
     
     window.onload = function () {
     //Reference the Table.
@@ -16,10 +16,11 @@
             //Check whether the INPUT element is TextBox.
             if (inputs[i].type == "text") {
                 //Check whether Date Format Validation is required.
-                if (inputs[i].className.indexOf("date-format") != 0) {
+                if (inputs[i].className.indexOf("form-control mb-4 col-4 date-format") == 0) {
+                //if (inputs[i].getElementById("phoneNum") != 1) {
                        
                     //Set Max Length.
-                    inputs[i].setAttribute("maxlength", 10);
+                    inputs[i].setAttribute("maxlength", 12);
  
                     //Only allow Numeric Keys.
                     inputs[i].onkeydown = function (e) {
@@ -40,8 +41,8 @@
             isShift = true;
         }
         //Allow only Numeric Keys.
-        if (((keyCode >= 48 && keyCode <= 57) || keyCode == 8 || keyCode <= 37 || keyCode <= 39 || (keyCode >= 96 && keyCode <= 105)) && isShift == false) {
-            if ((input.value.length == 2 || input.value.length == 5) && keyCode != 8) {
+        if (((keyCode >= 48 && keyCode <= 57) || keyCode == 12 || keyCode <= 37 || keyCode <= 39 || (keyCode >= 96 && keyCode <= 105)) && isShift == false) {
+            if ((input.value.length == 2 || input.value.length == 5) && keyCode != 12) {
                 input.value += seperator;
             }
  
