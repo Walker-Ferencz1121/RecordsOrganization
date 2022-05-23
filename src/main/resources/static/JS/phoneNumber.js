@@ -17,7 +17,6 @@
             if (inputs[i].type == "text") {
                 //Check whether Date Format Validation is required.
                 if (inputs[i].className.indexOf("form-control mb-4 col-4 date-format") == 0) {
-                //if (inputs[i].getElementById("phoneNum") != 1) {
                        
                     //Set Max Length.
                     inputs[i].setAttribute("maxlength", 12);
@@ -42,7 +41,7 @@
         }
         //Allow only Numeric Keys.
         if (((keyCode >= 48 && keyCode <= 57) || keyCode == 12 || keyCode <= 37 || keyCode <= 39 || (keyCode >= 96 && keyCode <= 105)) && isShift == false) {
-            if ((input.value.length == 2 || input.value.length == 5) && keyCode != 12) {
+            if ((input.value.length == 3 || input.value.length == 7) && keyCode != 12) {
                 input.value += seperator;
             }
  
