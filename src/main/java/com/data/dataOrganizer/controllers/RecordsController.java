@@ -23,9 +23,18 @@ public class RecordsController {
 	private RecordsService recordsService;
 	
 	// display list of records
+//	@GetMapping("/")
+//	public String viewHomePage(Model model) {
+//		return findPaginated(1, "firstName", "asc", model);		
+//	}
+	
 	@GetMapping("/")
 	public String viewHomePage(Model model) {
-		return findPaginated(1, "firstName", "asc", model);		
+		List<Records> listRecords = recordsService.getAllRecords();
+		
+		model.addAttribute("listRecords", listRecords);
+		
+		return "index";
 	}
 	
 	//For full text search through MySQL, go to indexes and type in full_text_search_idx and select FULLTEXT followed by the categories you would like to search by
@@ -80,26 +89,31 @@ public class RecordsController {
 		return "redirect:/";
 	}
 	
-	
-	@GetMapping("/page/{pageNo}")
-	public String findPaginated(@PathVariable (value = "pageNo") int pageNo, 
-			@RequestParam("sortField") String sortField,
-			@RequestParam("sortDir") String sortDir,
-			Model model) {
-		int pageSize = 5;
-		
-		Page<Records> page = recordsService.findPaginated(pageNo, pageSize, sortField, sortDir);
-		List<Records> listRecords = page.getContent();
-		
-		model.addAttribute("currentPage", pageNo);
-		model.addAttribute("totalPages", page.getTotalPages());
-		model.addAttribute("totalItems", page.getTotalElements());
-		
-		model.addAttribute("sortField", sortField);
-		model.addAttribute("sortDir", sortDir);
-		model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
-		
-		model.addAttribute("listRecords", listRecords);
-		return "index";
+	@GetMapping("/totalPrice")
+	public String totalCalculation(Model model) {
+		return "total_calculation";
 	}
+	
+	
+//	@GetMapping("/page/{pageNo}")
+//	public String findPaginated(@PathVariable (value = "pageNo") int pageNo, 
+//			@RequestParam("sortField") String sortField,
+//			@RequestParam("sortDir") String sortDir,
+//			Model model) {
+//		int pageSize = 5;
+//		
+//		Page<Records> page = recordsService.findPaginated(pageNo, pageSize, sortField, sortDir);
+//		List<Records> listRecords = page.getContent();
+//		
+//		model.addAttribute("currentPage", pageNo);
+//		model.addAttribute("totalPages", page.getTotalPages());
+//		model.addAttribute("totalItems", page.getTotalElements());
+//		
+//		model.addAttribute("sortField", sortField);
+//		model.addAttribute("sortDir", sortDir);
+//		model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
+//		
+//		model.addAttribute("listRecords", listRecords);
+//		return "index";
+//	}
 }

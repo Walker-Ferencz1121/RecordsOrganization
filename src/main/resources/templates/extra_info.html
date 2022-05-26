@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="ISO-8859-1">
-        <title>Books Management System</title>
+        <title>Additional Information</title>
         
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <script type="text/javascript" src="/webjars/jquery/3.6.0/jquery.min.js"></script>
@@ -33,6 +33,7 @@
                         <th>Payment</th>
                         <th>Operator Signature</th>
                         <th>Total</th>
+                        <th>Extra Information</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -49,6 +50,7 @@
                         <td th:text="${records.payment}"></td>
                         <td th:text="${records.opSignature}"></td>
                         <td class="tdTotal" th:text="${records.total}"></td>
+                        <td th:text="${records.extraText}"></td>
                         <td> <a th:href="@{/showFormForUpdate/{id}(id=${records.id})}" class="btn btn-primary">Update</a>
                             <a th:href="@{/deleteRecords/{id}(id=${records.id})}" class="btn btn-danger">Delete</a>
                         </td>

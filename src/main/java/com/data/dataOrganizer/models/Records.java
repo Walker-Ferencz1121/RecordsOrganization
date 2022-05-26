@@ -57,6 +57,9 @@ public class Records {
 	
 	@Column(name = "total")
 	private String total;
+	
+	@Column(name = "extra_text")
+	private String extraText;
 
 	public Records() {
 		
@@ -64,7 +67,7 @@ public class Records {
 
 	public Records(long id, String date, String firstName, String lastName, String phoneNum, String vehLocation, String vehYear,
 			String vehMake, String vehModel, String vehColor, String vehIdNum, String vehTowedTo, String payment,
-			String opSignature, String total) {
+			String opSignature, String total, String extraText) {
 		super();
 		this.id = id;
 		this.date = date;
@@ -81,6 +84,7 @@ public class Records {
 		this.payment = payment;
 		this.opSignature = opSignature;
 		this.total = total;
+		this.extraText = extraText;
 	}
 
 	public long getId() {
@@ -202,6 +206,12 @@ public class Records {
 	public void setTotal(String total) {
 		this.total = total;
 	}
-	
-	
+
+	public String getExtraText() {
+		return extraText;
+	}
+
+	public void setExtraText(String extraText) {
+		this.extraText = extraText;
+	}
 }

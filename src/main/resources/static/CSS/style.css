@@ -1,16 +1,20 @@
 body {
-	background-color: black;
+	background-color: #FFFAFA;
+	
+}
+#addBtn {
+	color: #248d6c	
 }
 
 h1, h2, h3, h4, h5, h6, p {
-	color: white;
+	color: #248d6c;
 }
 
 th, td {
-	color: white;
+	color: black;
 	text-align: center;
 }
 
-th {
-	text-align: center;
+#name {
+	color: blue;
 }
