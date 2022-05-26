@@ -91,6 +91,8 @@ public class RecordsController {
 	
 	@GetMapping("/totalPrice")
 	public String totalCalculation(Model model) {
+		Records records = new Records();
+		
 		return "total_calculation";
 	}
 	
