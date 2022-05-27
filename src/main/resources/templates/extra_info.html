@@ -2,64 +2,66 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="ISO-8859-1">
-        <title>Additional Information</title>
-        
+        <title>Books Management System</title>
+
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <script type="text/javascript" src="/webjars/jquery/3.6.0/jquery.min.js"></script>
-        
+
         <link rel="stylesheet" type="text/css" href="/CSS/style.css" />
-        <script src="/JS/main.js"></script>
+        <script src="/JS/dollarSign.js"></script>
     </head>
     <body>
 
         <div class="container my-2">
         <h1>Records List</h1>
-        
-        <a th:href = "@{/showNewRecordsForm}" class="btn btn-primary btn-sm mb-3"> Add Records </a>
-                
+
+        <a th:href = "@{/showNewRecordsForm}" id=button1 class="btn btn-primary btn-sm mb-3"> Add Records </a>
+
             <!--<table border="1" class = "table table-striped table-responsive-md">-->
             <!--<table class="table table-striped">-->
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Location of Vehicle</th>
-                        <th>Vehicle Year</th>
-                        <th>Vehicle Make</th>
-                        <th>Vehicle Model</th>
-                        <th>Vehicle Color</th>
-                        <th>VIN</th>
-                        <th>Vehicle Towed To</th>
-                        <th>Payment</th>
-                        <th>Operator Signature</th>
-                        <th>Total</th>
-                        <th>Extra Information</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="records : ${records}">
-                        <td th:text="${records.firstName + ' ' + records.lastName}"></td>
-                        <td th:text="${records.vehLocation}"></td>
-                        <td th:text="${records.vehYear}"></td>
-                        <td th:text="${records.vehMake}"></td>
-                        <td th:text="${records.vehModel}"></td>
-                        <td th:text="${records.vehColor}"></td>
-                        <td th:text="${records.vehIdNum}"></td>
-                        <td th:text="${records.vehTowedTo}"></td>
-                        <td th:text="${records.payment}"></td>
-                        <td th:text="${records.opSignature}"></td>
-                        <td class="tdTotal" th:text="${records.total}"></td>
-                        <td th:text="${records.extraText}"></td>
-                        <td> <a th:href="@{/showFormForUpdate/{id}(id=${records.id})}" class="btn btn-primary">Update</a>
-                            <a th:href="@{/deleteRecords/{id}(id=${records.id})}" class="btn btn-danger">Delete</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            
+            <div class="card">
+            <!--   <div class="card-body"> -->
+            <div id="menu">
+	        	<table>
+	        		<thead>
+		            	<tr>
+	                        <th>Name</th>
+	                        <th>Location of Vehicle</th>
+	                        <th>Vehicle Year</th>
+	                        <th>Vehicle Make</th>
+	                        <th>Vehicle Model</th>
+	                        <th>Vehicle Color</th>
+	                        <th>VIN</th>
+	                        <th>Vehicle Towed To</th>
+	                        <th>Payment</th>
+	                        <th>Operator Signature</th>
+	                        <th>Total</th>
+	                        <th>Actions</th>
+	                    </tr>
+	                </thead>
+	                <tbody>
+	                    <tr th:each="records : ${records}">
+	                        <td th:text="${records.firstName + ' ' + records.lastName}"></td>
+	                        <td th:text="${records.vehLocation}"></td>
+	                        <td th:text="${records.vehYear}"></td>
+	                        <td th:text="${records.vehMake}"></td>
+	                        <td th:text="${records.vehModel}"></td>
+	                        <td th:text="${records.vehColor}"></td>
+	                        <td th:text="${records.vehIdNum}"></td>
+	                        <td th:text="${records.vehTowedTo}"></td>
+	                        <td th:text="${records.payment}"></td>
+	                        <td th:text="${records.opSignature}"></td>
+	                        <td class="tdTotal" th:text="${records.total}"></td>
+	                        <td> <a th:href="@{/showFormForUpdate/{id}(id=${records.id})}" type=button class="btn">Update</a>
+	                            <a th:href="@{/deleteRecords/{id}(id=${records.id})}" type=button class="btn">Delete</a>
+	                        </td>
+	                    </tr>
+	                </tbody>
+	            </table>
+            </div>
+
             <a th:href = "@{/}"> Back to Records List</a>
-            
+          </div>
         </div>
     </body>
 </html>

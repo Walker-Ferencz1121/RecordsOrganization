@@ -11,20 +11,20 @@
     </head>
 	<body>
 		<div class="container">
-			<h1>Records Addition System</h1>
+			<h1>Records Management System</h1>
 			<hr>
 			<h2>Save Records</h2>
-	
+
 			<form action="#" th:action="@{/saveRecords}" th:object="${records}" method="POST">
-				
+
 				<input type="text" th:field="*{firstName}" placeholder="First Name" class="form-control mb-4 col-4">
-				
+
 				<input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control mb-4 col-4">
-				
+
 				<input type="date" th:field="*{date}" class="form-control mb-4 col-4">
-								
+
 				<input type="text" th:field="*{phoneNum}" placeholder="Client Phone Number" class="form-control mb-4 col-4 date-format">
-				
+
 				<!-- <table id="tblForm" border="0" cellpadding="5" cellspacing="0">
 				    <tr>
 				        <td>Birth Date:</td>
@@ -32,43 +32,39 @@
 				        <td><span class="error" style="display: none">Invalid Date. Only dd/MM/yyyy format allowed.</span></td>
 				    </tr>
 				</table> -->
-				
+
 				<input type="text" th:field="*{vehLocation}" placeholder="Location of Vehicle" class="form-control mb-4 col-4">
-				
+
 				<input type="text" th:field="*{vehYear}" placeholder="Year of Vehicle" class="form-control mb-4 col-4">
-				
+
 				<!-- Potential drop down box for make and model --> <!-- Customer didn't want drop down boxes but they are possible -->
-				<input type="text" th:field="*{vehMake}" placeholder="Vehicle Make" class="form-control mb-4 col-4"> 
-				
+				<input type="text" th:field="*{vehMake}" placeholder="Vehicle Make" class="form-control mb-4 col-4">
+
 				<input type="text" th:field="*{vehModel}" placeholder="Vehicle Model" class="form-control mb-4 col-4">
-				
+
 				<input type="text" th:field="*{vehColor}" placeholder="Vehicle Color" class="form-control mb-4 col-4">
-				
+
 				<input type="text" th:field="*{vehIdNum}" placeholder="Vehicle ID Number" class="form-control mb-4 col-4">
-				
+
 				<input type="text" th:field="*{vehTowedTo}" placeholder="Vehicle Towed To" class="form-control mb-4 col-4">
-								
+
 				<input type="text" th:field="*{opSignature}" placeholder="Operator Signature" class="form-control mb-4 col-4">
-				
+
 				<input type="text" th:field="*{total}" placeholder="Total: $" class="form-control mb-4 col-4">
-				
+
 				<select name="payment" id="payment" th:field="*{payment}">
 					<option value="">Payment Type</option>
 					<option value="Cash">Cash</option>
 					<option value="Credit">Credit</option>
 					<option value="Check">Check</option>
 				</select>
-				
-				<br><br>
-				<textarea rows="5" cols="60" th:field="*{extraText}" placeholder="Enter details here..."></textarea>			
-				<br>				
-					
-				<button type="submit" class="btn btn-info col-2"> Save Records</button>
+
+				<button type="submit" id=button1 class="btn btn-info col-2"> Save Records</button>
 			</form>
-			
+
 			<hr>
-			
-			<a th:href = "@{/}"> Back to Records List</a>
+
+			<a  th:href = "@{/}"> Back to Records List</a>
 		</div>
 	</body>
 </html>

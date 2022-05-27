@@ -1,20 +1,66 @@
-body {
-	background-color: #FFFAFA;
-	
+/* <!-- <h1 style="background-color: DodgerBlue;"</h1> */
+
+.space {
+	width: 4px;
+  	height: auto;
+  	display: inline-block;
 }
-#addBtn {
-	color: #248d6c	
+body {
+/*	background-color: #FFFAFA;*/
+	background-color: #e0e2e4;
+	font-family: Tahoma, Verdana, sans-serif;
+	border-style: inset;
+	width: 1000px;
+	padding: 50px;
+	margin: 20px;
+	text-shadow: .25px .25px;
 }
 
 h1, h2, h3, h4, h5, h6, p {
+	/* color: #e0e2e4; */
+	font-family: Tahoma, Verdana, sans-serif;
 	color: #248d6c;
+	margin-left: 20px;
 }
-
-th, td {
-	color: black;
+.button{
+	font-family: Tahoma, Verdana, sans-serif;
+	border: none;
+	color: #248d6c;
 	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
+}
+#button1{
+	font-family: Tahoma, Verdana, sans-serif;
+	background-color: #248d6c;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 19px;
+}
+#menu{
+	padding: 10px 10px;
+}
+.btn {
+	font-family: Tahoma, Verdana, sans-serif;
+	color: #248d6c;
+	text-decoration-color: #248d6c;
+	background-color: #248d6c;
+	padding: 15px 32px;
+}
+th, td {
+	font-family: Tahoma, Verdana, sans-serif;
+	color: #248d6c;
+	text-align: center;
+	margin-left: 20px;
 }
 
-#name {
-	color: blue;
+th {
+	font-family: Tahoma, Verdana, sans-serif;
+	color: #248d6c;
+	text-align: center;
+	margin-left: 20px;
 }

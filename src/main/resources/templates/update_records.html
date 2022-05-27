@@ -12,50 +12,50 @@
 			<h1>Records Management System</h1>
 			<hr>
 			<h2>Update Records</h2>
-	
+
 			<form action="#" th:action="@{/saveRecords}" th:object="${records}" method="POST">
-				
+
 				<!-- Add hidden form field to handle update -->
 				<input type="hidden" th:field="*{id}" />
-				
+
 				<input type="text" th:field="*{firstName}" class="form-control mb-4 col-4">
-				
+
 				<input type="text" th:field="*{lastName}" class="form-control mb-4 col-4">
-									
+
 				<input type="date" th:field="*{date}" class="form-control mb-4 col-4">
-				
+
 				<input type="text" th:field="*{phoneNum}" class="form-control mb-4 col-4">
-				
+
 				<input type="text" th:field="*{vehLocation}" class="form-control mb-4 col-4">
-				
+
 				<input type="text" th:field="*{vehYear}" class="form-control mb-4 col-4">
-				
-				<input type="text" th:field="*{vehMake}" class="form-control mb-4 col-4"> 
-				
+
+				<input type="text" th:field="*{vehMake}" class="form-control mb-4 col-4">
+
 				<input type="text" th:field="*{vehModel}" class="form-control mb-4 col-4">
-				
+
 				<input type="text" th:field="*{vehColor}" class="form-control mb-4 col-4">
-				
+
 				<input type="text" th:field="*{vehIdNum}" class="form-control mb-4 col-4">
-				
+
 				<input type="text" th:field="*{vehTowedTo}" class="form-control mb-4 col-4">
-				
+
 				<input type="text" th:field="*{opSignature}" class="form-control mb-4 col-4">
-				
+
 				<input type="text" th:field="*{total}" class="form-control mb-4 col-4">
-				
+
 				<select name="payment" id="payment" th:field="*{payment}">
                     <option value="">Payment Type</option>
                     <option value="Cash">Cash</option>
                     <option value="Credit">Credit</option>
                     <option value="Check">Check</option>
                 </select>
-				
-		 		<button type="submit" class="btn btn-info col-2"> Update Records</button>
+
+		 		<button type="submit" id=button1 class="btn btn-info col-2"> Update Records</button>
 			</form>
-			
+
 			<hr>
-			
+
 			<a th:href = "@{/}"> Back to Records List</a>
 		</div>
 	</body>
