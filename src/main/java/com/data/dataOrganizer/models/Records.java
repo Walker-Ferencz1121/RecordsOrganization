@@ -60,6 +60,12 @@ public class Records {
 	
 	@Column(name = "extra_text")
 	private String extraText;
+	
+	@Column(name = "towing_fee")
+	private double towingFee;
+	
+	@Column(name = "mileage_fee")
+	private double mileageFee;
 
 	public Records() {
 		
@@ -67,7 +73,7 @@ public class Records {
 
 	public Records(long id, String date, String firstName, String lastName, String phoneNum, String vehLocation, String vehYear,
 			String vehMake, String vehModel, String vehColor, String vehIdNum, String vehTowedTo, String payment,
-			String opSignature, String total, String extraText) {
+			String opSignature, String total, String extraText, double towingFee, double mileageFee) {
 		super();
 		this.id = id;
 		this.date = date;
@@ -85,6 +91,8 @@ public class Records {
 		this.opSignature = opSignature;
 		this.total = total;
 		this.extraText = extraText;
+		this.towingFee = towingFee;
+		this.mileageFee = mileageFee;
 	}
 
 	public long getId() {
@@ -213,5 +221,21 @@ public class Records {
 
 	public void setExtraText(String extraText) {
 		this.extraText = extraText;
+	}
+
+	public double getTowingFee() {
+		return towingFee;
+	}
+
+	public void setTowingFee(double towingFee) {
+		this.towingFee = towingFee;
+	}
+
+	public double getMileageFee() {
+		return mileageFee;
+	}
+
+	public void setMileageFee(double mileageFee) {
+		this.mileageFee = mileageFee;
 	}
 }
