@@ -3,7 +3,6 @@ package com.data.dataOrganizer.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,8 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import com.data.dataOrganizer.java.totalCalculation;
 import com.data.dataOrganizer.models.Records;
 import com.data.dataOrganizer.services.RecordsService;
 
@@ -21,7 +20,7 @@ public class RecordsController {
 
 	@Autowired
 	private RecordsService recordsService;
-	
+		
 	// display list of records
 //	@GetMapping("/")
 //	public String viewHomePage(Model model) {
@@ -90,8 +89,13 @@ public class RecordsController {
 	}
 	
 	@GetMapping("/totalPrice")
-	public String totalCalculation(Model model) {
+	public String totalCalculation(Model model, @PathVariable (value = "towing_fee") double towingFee, @PathVariable (value = "mileage_fee") double mileageFee) {
 		Records records = new Records();
+		
+		totalCalculation total = new totalCalculation(towingFee, mileageFee);
+		
+		model.addAttribute("records", records);
+		model.addAttribute("total", total);
 		
 		return "total_calculation";
 	}
