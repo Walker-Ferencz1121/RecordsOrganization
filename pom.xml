@@ -66,11 +66,11 @@
             <artifactId>jquery</artifactId>
             <version>3.6.0</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
         <groupId>org.webjars</groupId>
 	    <artifactId>jquery</artifactId>
-	    <version>3.4.1</version> <!--Delete this if not longer using!-->
-        </dependency>
+	    <version>3.4.1</version>--> <!--Delete this if no longer using!-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>

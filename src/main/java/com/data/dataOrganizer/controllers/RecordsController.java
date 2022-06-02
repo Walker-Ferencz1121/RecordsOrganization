@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.data.dataOrganizer.java.totalCalculation;
 import com.data.dataOrganizer.models.Records;
 import com.data.dataOrganizer.services.RecordsService;
 
@@ -89,13 +88,10 @@ public class RecordsController {
 	}
 	
 	@GetMapping("/totalPrice")
-	public String totalCalculation(Model model, @PathVariable (value = "towing_fee") double towingFee, @PathVariable (value = "mileage_fee") double mileageFee) {
-		Records records = new Records();
-		
-		totalCalculation total = new totalCalculation(towingFee, mileageFee);
-		
-		model.addAttribute("records", records);
-		model.addAttribute("total", total);
+	public String totalCalculation(Model model) {
+		List<Records> listRecords = recordsService.getAllRecords();
+				
+		model.addAttribute("listRecords", listRecords);
 		
 		return "total_calculation";
 	}
