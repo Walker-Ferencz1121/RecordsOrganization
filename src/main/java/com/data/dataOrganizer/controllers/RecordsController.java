@@ -87,16 +87,6 @@ public class RecordsController {
 		return "redirect:/";
 	}
 	
-	@GetMapping("/totalPrice")
-	public String totalCalculation(Model model) {
-		List<Records> listRecords = recordsService.getAllRecords();
-				
-		model.addAttribute("listRecords", listRecords);
-		
-		return "total_calculation";
-	}
-	
-	
 //	@GetMapping("/page/{pageNo}")
 //	public String findPaginated(@PathVariable (value = "pageNo") int pageNo, 
 //			@RequestParam("sortField") String sortField,

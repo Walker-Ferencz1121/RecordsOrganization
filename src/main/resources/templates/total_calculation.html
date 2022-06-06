@@ -1,52 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="ISO-8859-1">
-        <title>Books Management System</title>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-        <script type="text/javascript" src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" >
 
-        <link rel="stylesheet" type="text/css" href="/CSS/style.css" />
-        <script src="/JS/total.js"></script>
-    </head>
-    <body>
-
-<!--         <div class="container my-2"> -->
-        <h1>Records List</h1>
-
-        <a th:href = "@{/showNewRecordsForm}" id=button1 class="btn btn-primary btn-sm mb-3"> Add Records </a>
-
-            <!--<table border="1" class = "table table-striped table-responsive-md">-->
-            <!--<table class="table table-striped">-->
-            <div class="card">
-            <div id="menu">
-	        	  <table>
-	        		 <thead>
-	        		     <tr>
-		            	     <th>Name</th>
-<!-- 	                        <th>Total</th> -->
-	                        <th>Towing Fee</th>
-	                        <th>Mileage Fee</th>
-	                        <th>Total</th>
-	                        <th>Actions</th>
-	                    </tr>
-	                </thead>
-	                <tbody>
-	                    <tr th:each="records : ${listRecords}">
-                        <td><a th:text="${records.firstName + ' ' + records.lastName}"></a></td>
-	                        <td th:text="${records.towingFee}"></td>
-                            <td th:text="${records.mileageFee}"></td>
-                            <td th:text="${records.total}"></td>                   
-	                        <td> <a th:href="@{/showFormForUpdate/{id}(id=${records.id})}" type=button class="btn">Update</a>
-	                            <a th:href="@{/deleteRecords/{id}(id=${records.id})}" type=button class="btn">Delete</a>
-	                        </td>
-	                    </tr>
-	                </tbody>
-	            </table>
-            </div>
-
-            <a th:href = "@{/}"> Back to Records List</a>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+         <div>
+        <h1>Add Two Numbers</h1>
+         </div>     
+         <form th:action="@{addition}" th:object="${addition}" method="post">
+          <div>
+        <label>Num1</label>
+        <input type="text" id="towingFee" class="form-control" name="towingFee" > 
           </div>
-    </body>
+          <div>
+        <label>Num2</label>
+        <input type="text" id="mileageFee" class="form-control" name="mileageFee" >
+          </div>
+        </br>
+           <div>
+        <input type="submit" value="submit" />
+           </div>
+       </form>
+    </div>
+</div>
+</body>
 </html>
