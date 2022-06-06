@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.data.dataOrganizer.models.Total;
-import com.data.dataOrganizer.repository.TotalRepository;
+import com.data.dataOrganizer.services.TotalService;
 
 @Controller
 public class TotalController {
 
-	private TotalRepository totalRepository;
+	private TotalService totalService;
 	
 	@GetMapping("/totalPrice")
 	public String totalCalculation(Model model) {
-		List<Total> totalList = totalRepository.findAll();
+		List<Total> totalList = totalService.getAllRecords();
 				
 		model.addAttribute("totalList", totalList);
 		model.addAttribute("Total", new Total());
