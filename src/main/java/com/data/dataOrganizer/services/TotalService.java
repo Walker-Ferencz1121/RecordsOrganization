@@ -14,7 +14,7 @@ public class TotalService {
 	@Autowired
 	private TotalRepository totalRepository;
 
-	public List<Total> getAllRecords() {
+	public List<Total> getList() {
 		return totalRepository.findAll();
 	}
 }

@@ -2,6 +2,7 @@ package com.data.dataOrganizer.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,22 +16,29 @@ import com.data.dataOrganizer.services.TotalService;
 @Controller
 public class TotalController {
 
+	@Autowired
 	private TotalService totalService;
+	
+	@GetMapping("/totalTable")
+	public String totalTable(Model model) {
+		List<Total> totalList = totalService.getList();
+
+		model.addAttribute("totalList", totalList);
+
+		return "/total/total_table";
+	}
 	
 	@GetMapping("/totalPrice")
 	public String totalCalculation(Model model) {
-		List<Total> totalList = totalService.getAllRecords();
-				
-		model.addAttribute("totalList", totalList);
 		model.addAttribute("Total", new Total());
 		
-		return "total_table";
+		return "/total/total_calculation";
 	}
 	
 	@PostMapping("/addition")
 	public String addForm(@ModelAttribute Total total, BindingResult result, Model model) {
-//		model.addAttribute("addition", addition);
 		model.addAttribute("total", total);
-		return "total_calculation";
+		
+		return "/total/total_answer";
 	}
 }
