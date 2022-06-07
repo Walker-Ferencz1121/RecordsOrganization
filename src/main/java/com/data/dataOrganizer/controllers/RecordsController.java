@@ -46,8 +46,8 @@ public class RecordsController {
 		return "index";
 	}
 	
-	@GetMapping("/showNewRecordsForm")
-	public String showNewRecordsForm(Model model) {
+	@GetMapping("/newRecord")
+	public String newRecord(Model model) {
 		// create model attribute to bind form data
 		Records records = new Records();
 		model.addAttribute("records", records);
@@ -61,8 +61,8 @@ public class RecordsController {
 		return "redirect:/";
 	}
 	
-	@GetMapping("/showFormForUpdate/{id}")
-	public String showFormForUpdate(@PathVariable (value = "id") long id, Model model) {
+	@GetMapping("/updateRecord/{id}")
+	public String updateRecord(@PathVariable (value = "id") long id, Model model) {
 		// get records from the service
 		Records records = recordsService.getRecordsById(id);
 		
@@ -80,8 +80,8 @@ public class RecordsController {
 		return "extra_info";
 	}
 	
-	@GetMapping("/deleteRecords/{id}")
-	public String deleteRecords(@PathVariable (value = "id") long id) {
+	@GetMapping("/deleteRecord/{id}")
+	public String deleteRecord(@PathVariable (value = "id") long id) {
 		// call delete records method 
 		this.recordsService.deleteRecordsById(id);
 		return "redirect:/";

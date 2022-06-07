@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>New Records</title>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/CSS/style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>Total Table</h1>
+			<hr>
+
+			<form action="#" th:action="@{/saveTotal}" th:object="${total}" method="POST">
+
+				<h5>Towing Fee</h5>
+				<input type="text" th:field="*{towingFee}" class="form-control mb-4 col-4">
+
+				<h5>Mileage Fee</h5>
+				<input type="text" th:field="*{mileageFee}" class="form-control mb-4 col-4">
+
+				<button type="submit" id=button1 class="btn btn-info col-2"> Save Records</button>
+			</form>
+
+			<hr>
+
+			<a  th:href = "@{/totalTable}"> Back to Records List</a>
+		</div>
+	</body>
+</html>
