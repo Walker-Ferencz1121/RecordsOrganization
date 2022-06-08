@@ -12,8 +12,9 @@ import javax.persistence.Table;
 public class Records {
 	
 	@Id
-	@GeneratedValue(strategy =  GenerationType.IDENTITY)
+	//@GeneratedValue(strategy =  GenerationType.IDENTITY)
 	//@GeneratedValue(strategy =  GenerationType.AUTO)
+	@GeneratedValue(strategy =  GenerationType.SEQUENCE)
 	private long id;
 	
 	@Column(name = "date")

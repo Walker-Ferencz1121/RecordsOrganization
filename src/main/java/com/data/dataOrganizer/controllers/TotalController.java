@@ -29,34 +29,20 @@ public class TotalController {
 		return "/total/total_table";
 	}
 	
-	@GetMapping("/totalPrice")
-	public String totalCalculation(Model model) {
-		model.addAttribute("Total", new Total());
-		
-		return "/total/total_calculation";
-	}
-	
-	@PostMapping("/answer")
-	public String addForm(@ModelAttribute Total total, BindingResult result, Model model) {
-		model.addAttribute("total", total);
-		
-		return "/total/total_answer";
-	}
-	
 	@GetMapping("/newTotal")
-	public String showNewTotalForm(Model model) {
+	public String newTotal(Model model) {
 		// create model attribute to bind form data
 		Total total = new Total();
 		
 		model.addAttribute("total", total);
-		return "/total/total_calc";
+		return "/total/new_total";
 	}
 	
 	@PostMapping("/saveTotal")
 	public String saveTotal(@ModelAttribute("total") Total total) {
 		// save total to database
 		totalService.saveTotal(total);
-		return "redirect:/total/total_table";
+		return "redirect:/totalTable";
 	}
 	
 //	@GetMapping("/deleteRecord/{id}")
