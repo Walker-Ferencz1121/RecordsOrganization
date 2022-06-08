@@ -1,5 +1,7 @@
 package com.data.dataOrganizer.models;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -66,7 +68,11 @@ public class Total {
 	}
 	
 	public double getTowingFee() {
-		return towingFee;
+		BigDecimal bdTow = new BigDecimal(towingFee).setScale(2);
+
+		double towing = bdTow.doubleValue();
+		
+		return towing;
 	}
 
 	public void setTowingFee(double towingFee) {
@@ -74,7 +80,11 @@ public class Total {
 	}
 
 	public double getMileageFee() {
-		return mileageFee;
+		BigDecimal bdMile = new BigDecimal(mileageFee).setScale(2);
+
+		double mileage = bdMile.doubleValue();
+		
+		return mileage;
 	}
 
 	public void setMileageFee(double mileageFee) {
