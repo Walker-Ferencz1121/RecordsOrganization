@@ -27,7 +27,7 @@
 <!-- 	                        <th>Labor Charge</th> -->
 <!-- 	                        <th>Storage</th> -->
 	                        <th>Total</th>
-<!--                             <th>Actions</th> -->
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,9 +40,9 @@
 <!--                             <td th:text="${total.laborCharge}"></td> -->
 <!--                             <td th:text="${total.storage}"></td> -->
                             <td th:text="${total.totalCalculation()}"></td>
-<!--                             <td><a th:href="@{/showFormForUpdate/{id}(id=${records.id})}" type=button class="btn">Update</a> -->
-<!--                                 <a th:href="@{/deleteRecords/{id}(id=${records.id})}" type=button class="btn" onclick="if (!confirm('Are you sure?')) { return false }">Delete</a> -->
-<!--                             </td> -->
+                            <td><a th:href="@{/updateTotal/{id}(id=${total.id})}" type=button class="btn">Update</a>
+                                <a th:href="@{/deleteTotal/{id}(id=${total.id})}" type=button class="btn" onclick="if (!confirm('Are you sure?')) { return false }">Delete</a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

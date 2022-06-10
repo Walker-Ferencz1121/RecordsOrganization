@@ -1,7 +1,5 @@
 package com.data.dataOrganizer.models;
 
-import java.math.BigDecimal;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,9 +34,6 @@ public class Total {
 //	
 //	@Column(name = "storage")
 //	private double storage;
-//	
-//	@Column(name = "total_price")
-//	private double totalPrice;
 	
 	public Total() {
 		
@@ -46,7 +41,7 @@ public class Total {
 
 	public Total(long id, double towingFee, double mileageFee)
 			//, double extraPerson, double specialEquip,
-			//double laborCharge, double storage, double totalPrice) 
+			//double laborCharge, double storage) 
 			{
 		super();
 		this.id = id;
@@ -56,7 +51,6 @@ public class Total {
 //		this.specialEquip = specialEquip;
 //		this.laborCharge = laborCharge;
 //		this.storage = storage;
-//		this.totalPrice = totalPrice;
 	}
 
 	public long getId() {
@@ -68,11 +62,8 @@ public class Total {
 	}
 	
 	public double getTowingFee() {
-		BigDecimal bdTow = new BigDecimal(towingFee).setScale(2);
-
-		double towing = bdTow.doubleValue();
 		
-		return towing;
+		return towingFee;
 	}
 
 	public void setTowingFee(double towingFee) {
@@ -80,11 +71,8 @@ public class Total {
 	}
 
 	public double getMileageFee() {
-		BigDecimal bdMile = new BigDecimal(mileageFee).setScale(2);
-
-		double mileage = bdMile.doubleValue();
 		
-		return mileage;
+		return mileageFee;
 	}
 
 	public void setMileageFee(double mileageFee) {
@@ -138,21 +126,13 @@ public class Total {
 //	public void setStorage(double storage) {
 //		this.storage = storage;
 //	}
-//	
-//	public double getTotalPrice() {
-//	return totalPrice;
-//}
-//
-//public void setTotalPrice(double totalPrice) {
-//	this.totalPrice = totalPrice;
-//}
 
 	public double totalCalculation() {
 		return towingFee + mileageFee;
 	}
 	
-//	public int stringToInt(double s) {
-//		return Integer.parseInt(s);
+//	public double stringToDouble(String s) {
+//		return Double.parseDouble(s);
 //	}
 //	
 //	private double intTodouble(int n) {

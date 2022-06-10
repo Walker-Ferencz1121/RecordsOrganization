@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.data.dataOrganizer.models.Total;
@@ -17,11 +18,11 @@ public class TotalController {
 
 	@Autowired
 	private TotalService totalService;
-	
+		
 	@GetMapping("/totalTable")
 	public String totalTable(Model model) {
 		List<Total> totalList = totalService.getList();
-
+		
 		model.addAttribute("totalList", totalList);
 
 		return "/total/total_table";
@@ -33,6 +34,7 @@ public class TotalController {
 		Total total = new Total();
 		
 		model.addAttribute("total", total);
+		
 		return "/total/new_total";
 	}
 	
@@ -40,13 +42,24 @@ public class TotalController {
 	public String saveTotal(@ModelAttribute("total") Total total) {
 		// save total to database
 		totalService.saveTotal(total);
+		
 		return "redirect:/totalTable";
 	}
 	
-//	@GetMapping("/deleteRecord/{id}")
-//	public String deleteRecord(@PathVariable (value = "id") long id) {
-//		// call delete total method 
-//		this.totalService.deleteTotalById(id);
-//		return "redirect:/";
-//	}
+	@GetMapping("/updateTotal/{id}")
+	public String updateTotal(@PathVariable (value = "id") long id, Model model) {
+		// get total from the service
+		Total total = totalService.getTotalById(id);
+		
+		// set total as a model attribute to pre-populate the form
+		model.addAttribute("total", total);
+		return "/total/update_total";
+	}
+	
+	@GetMapping("/deleteTotal/{id}")
+	public String deleteTotal(@PathVariable (value = "id") long id) {
+		// call delete total method 
+		this.totalService.deleteTotalById(id);
+		return "redirect:/totalTable";
+	}
 }
