@@ -39,7 +39,8 @@
 <!--                             <td th:text="${total.specialEquip}"></td> -->
 <!--                             <td th:text="${total.laborCharge}"></td> -->
 <!--                             <td th:text="${total.storage}"></td> -->
-                            <td th:text="${total.totalCalculation()}"></td>
+<!--                             <td th:text="${total.totalCalculation()}"></td> -->
+							<td th:field="${total.totalPrice}"></td>
                             <td><a th:href="@{/updateTotal/{id}(id=${total.id})}" type=button class="btn">Update</a>
                                 <a th:href="@{/deleteTotal/{id}(id=${total.id})}" type=button class="btn" onclick="if (!confirm('Are you sure?')) { return false }">Delete</a>
                             </td>

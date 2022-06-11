@@ -35,13 +35,17 @@ public class Total {
 //	@Column(name = "storage")
 //	private double storage;
 	
+	@Column(name = "total_price")
+	private double totalPrice;
+	
 	public Total() {
 		
 	}
 
-	public Total(long id, double towingFee, double mileageFee)
+	public Total(long id, double towingFee, double mileageFee,
 			//, double extraPerson, double specialEquip,
 			//double laborCharge, double storage) 
+			double totalPrice)
 			{
 		super();
 		this.id = id;
@@ -51,6 +55,7 @@ public class Total {
 //		this.specialEquip = specialEquip;
 //		this.laborCharge = laborCharge;
 //		this.storage = storage;
+		this.totalPrice = totalPrice;
 	}
 
 	public long getId() {
@@ -126,9 +131,22 @@ public class Total {
 //	public void setStorage(double storage) {
 //		this.storage = storage;
 //	}
+	
+	public double getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(double totalPrice) {
+		//this.totalPrice = totalPrice;
+		this.totalPrice = towingFee + mileageFee;
+	}
 
 	public double totalCalculation() {
-		return towingFee + mileageFee;
+		this.totalPrice = towingFee + mileageFee;
+		
+		return totalPrice;
+		
+		//return towingFee + mileageFee;
 	}
 	
 //	public double stringToDouble(String s) {

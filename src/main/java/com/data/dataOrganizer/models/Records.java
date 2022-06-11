@@ -17,9 +17,12 @@ public class Records {
 	@GeneratedValue(strategy =  GenerationType.SEQUENCE)
 	private long id;
 	
-	@Column(name = "date")
-	private String date;
-	
+	@Column(name = "storage_start")
+	private String storageStart;
+
+	@Column(name = "storage_end")
+	private String storageEnd;
+
 	@Column(name = "first_name")
 	private String firstName;
 	
@@ -56,9 +59,6 @@ public class Records {
 	@Column(name = "op_signature")
 	private String opSignature;
 	
-	@Column(name = "total")
-	private String total;
-	
 	@Column(name = "extra_text")
 	private String extraText;
 
@@ -66,12 +66,13 @@ public class Records {
 		
 	}
 
-	public Records(long id, String date, String firstName, String lastName, String phoneNum, String vehLocation, String vehYear,
-			String vehMake, String vehModel, String vehColor, String vehIdNum, String vehTowedTo, String payment,
-			String opSignature, String total, String extraText, double towingFee, double mileageFee) {
+	public Records(long id, String storageStart, String storageEnd, String firstName, String lastName, String phoneNum,
+			String vehLocation, String vehYear, String vehMake, String vehModel, String vehColor, String vehIdNum,
+			String vehTowedTo, String payment, String opSignature, String total, String extraText) {
 		super();
 		this.id = id;
-		this.date = date;
+		this.storageStart = storageStart;
+		this.storageEnd = storageEnd;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNum = phoneNum;
@@ -84,7 +85,6 @@ public class Records {
 		this.vehTowedTo = vehTowedTo;
 		this.payment = payment;
 		this.opSignature = opSignature;
-		this.total = total;
 		this.extraText = extraText;
 	}
 
@@ -96,12 +96,20 @@ public class Records {
 		this.id = id;
 	}
 
-	public String getDate() {
-		return date;
+	public String getStorageStart() {
+		return storageStart;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setStorageStart(String storageStart) {
+		this.storageStart = storageStart;
+	}
+
+	public String getStorageEnd() {
+		return storageEnd;
+	}
+
+	public void setStorageEnd(String storageEnd) {
+		this.storageEnd = storageEnd;
 	}
 
 	public String getFirstName() {
@@ -200,14 +208,6 @@ public class Records {
 		this.opSignature = opSignature;
 	}
 
-	public String getTotal() {
-		return total;
-	}
-
-	public void setTotal(String total) {
-		this.total = total;
-	}
-
 	public String getExtraText() {
 		return extraText;
 	}
@@ -215,4 +215,10 @@ public class Records {
 	public void setExtraText(String extraText) {
 		this.extraText = extraText;
 	}
+	
+//	public double totalCalculation() {
+//		Total total = new Total();
+//		
+//		return total.totalCalculation();
+//	}
 }

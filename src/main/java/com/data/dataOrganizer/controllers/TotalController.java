@@ -20,8 +20,11 @@ public class TotalController {
 	private TotalService totalService;
 		
 	@GetMapping("/totalTable")
-	public String totalTable(Model model) {
+	public String totalTable(double totalPrice, Model model) {
 		List<Total> totalList = totalService.getList();
+		Total total = new Total();
+		
+		total.setTotalPrice(totalPrice);
 		
 		model.addAttribute("totalList", totalList);
 

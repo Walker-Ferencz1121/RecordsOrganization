@@ -26,6 +26,7 @@
 	        		<thead>
 		            	<tr>
 	                        <th>Name</th>
+	                        <th>Date Departed</th>
 	                        <th>Location of Vehicle</th>
 	                        <th>Vehicle Year</th>
 	                        <th>Vehicle Make</th>
@@ -44,6 +45,7 @@
 	                <tbody>
 	                    <tr th:each="records : ${records}">
 	                        <td th:text="${records.firstName + ' ' + records.lastName}"></td>
+	                        <td th:text="${records.storageEnd}"></td>
 	                        <td th:text="${records.vehLocation}"></td>
 	                        <td th:text="${records.vehYear}"></td>
 	                        <td th:text="${records.vehMake}"></td>
@@ -57,7 +59,7 @@
 <!-- 	                        <td th:text="${records.towingFee}"></td> -->
 <!--                             <td th:text="${records.mileageFee}"></td>	                         -->
 	                        <td><a th:href="@{/showFormForUpdate/{id}(id=${records.id})}" type=button class="btn">Update</a>
-                                <a th:href="@{/deleteRecords/{id}(id=${records.id})}" type=button class="btn" onclick="if (!confirm('Are you sure?')) { return false }">Delete</a>
+                                <a th:href="@{/deleteRecord/{id}(id=${records.id})}" type=button class="btn" onclick="if (!confirm('Are you sure?')) { return false }">Delete</a>
 	                        </td>
 	                    </tr>
 	                </tbody>
