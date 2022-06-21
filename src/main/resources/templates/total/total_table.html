@@ -8,11 +8,9 @@
         <script type="text/javascript" src="/webjars/jquery/3.6.0/jquery.min.js"></script>
 
         <link rel="stylesheet" type="text/css" href="/CSS/style.css" />
-        <script src="/JS/extraInfo.js"></script>
-        <script src="/JS/alert.js"></script>
     </head>
     <body>
-        <h1>Records List</h1>
+        <h1>Total Price List</h1>
             <div class="card">
             <div id="menu">
             <a th:href = "@{/newTotal}" type=button class="btn"> Add Records </a>
@@ -39,8 +37,8 @@
 <!--                             <td th:text="${total.specialEquip}"></td> -->
 <!--                             <td th:text="${total.laborCharge}"></td> -->
 <!--                             <td th:text="${total.storage}"></td> -->
-<!--                             <td th:text="${total.totalCalculation()}"></td> -->
-							<td th:field="${total.totalPrice}"></td>
+                            <td th:text="${total.totalCalculation()}"></td>
+<!-- 							<td th:field="${total.totalPrice}"></td> -->
                             <td><a th:href="@{/updateTotal/{id}(id=${total.id})}" type=button class="btn">Update</a>
                                 <a th:href="@{/deleteTotal/{id}(id=${total.id})}" type=button class="btn" onclick="if (!confirm('Are you sure?')) { return false }">Delete</a>
                             </td>

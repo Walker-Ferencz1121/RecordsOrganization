@@ -10,6 +10,8 @@
         <script src="/JS/alert.js"></script>      
     </head>
     <body>
+        <a th:href = "@{/totalTable}">Total Prices</a>
+    
 		<div class="container my-2">
 		<h1>Records List</h1>
 
@@ -34,7 +36,7 @@
 						<th>Name</th>
 						<th>Date Entered</th>
 						<th>Phone Number</th>
-						<th>Total</th>
+<!-- 						<th>Total</th> -->
 						<th>Actions</th>
 					</tr>
 				</thead>
@@ -43,7 +45,7 @@
 					   <td><a th:href="@{/extraInfo/{id} (id=${records.id})}" th:text="${records.firstName + ' ' + records.lastName}"></a></td>
 					   <td th:text="${records.storageStart}"></td>
 						<td th:text="${records.phoneNum}"></td>
-                        <td th:text="${records.totalCalculation()}"></td>
+<!--                         <td th:text="${records.totalCalculation()}"></td> -->
 						<td><a th:href="@{/updateRecord/{id}(id=${records.id})}"type=button class="btn">Update</a>
 						    <a th:href="@{/deleteRecord/{id}(id=${records.id})}"type=button class="btn" onclick="if (!confirm('Are you sure?')) { return false }">Delete</a>
 						</td>

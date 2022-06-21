@@ -137,8 +137,8 @@ public class Total {
 	}
 
 	public void setTotalPrice(double totalPrice) {
-		//this.totalPrice = totalPrice;
-		this.totalPrice = towingFee + mileageFee;
+		this.totalPrice = totalPrice;
+		//this.totalPrice = towingFee + mileageFee;
 	}
 
 	public double totalCalculation() {
