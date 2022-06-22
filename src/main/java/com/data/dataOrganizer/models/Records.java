@@ -61,6 +61,27 @@ public class Records {
 	
 	@Column(name = "extra_text")
 	private String extraText;
+	
+	@Column(name = "towing_fee")
+	private double towingFee;
+	
+	@Column(name = "mileage_fee")
+	private double mileageFee;
+	
+	@Column(name = "extra_person")
+	private double extraPerson;
+	
+	@Column(name = "special_equip")
+	private double specialEquip;
+	
+	@Column(name = "labor_charge")
+	private double laborCharge;
+	
+	@Column(name = "storage")
+	private double storage;
+	
+//	@Column(name = "total_price")
+//	private double totalPrice;
 
 	public Records() {
 		
@@ -68,7 +89,9 @@ public class Records {
 
 	public Records(long id, String storageStart, String storageEnd, String firstName, String lastName, String phoneNum,
 			String vehLocation, String vehYear, String vehMake, String vehModel, String vehColor, String vehIdNum,
-			String vehTowedTo, String payment, String opSignature, String total, String extraText) {
+			String vehTowedTo, String payment, String opSignature, String extraText, double towingFee,
+			double mileageFee, double extraPerson, double specialEquip, double laborCharge, double storage,
+			double totalPrice) {
 		super();
 		this.id = id;
 		this.storageStart = storageStart;
@@ -86,6 +109,13 @@ public class Records {
 		this.payment = payment;
 		this.opSignature = opSignature;
 		this.extraText = extraText;
+		this.towingFee = towingFee;
+		this.mileageFee = mileageFee;
+		this.extraPerson = extraPerson;
+		this.specialEquip = specialEquip;
+		this.laborCharge = laborCharge;
+		this.storage = storage;
+//		this.totalPrice = totalPrice;
 	}
 
 	public long getId() {
@@ -216,9 +246,65 @@ public class Records {
 		this.extraText = extraText;
 	}
 	
-//	public double totalCalculation() {
-//		Total total = new Total();
-//		
-//		return total.totalCalculation();
+	public double getTowingFee() {
+		
+		return towingFee;
+	}
+
+	public void setTowingFee(double towingFee) {
+		this.towingFee = towingFee;
+	}
+
+	public double getMileageFee() {
+		
+		return mileageFee;
+	}
+
+	public void setMileageFee(double mileageFee) {
+		this.mileageFee = mileageFee;
+	}
+
+	public double getExtraPerson() {
+		return extraPerson;
+	}
+
+	public void setExtraPerson(double extraPerson) {
+		this.extraPerson = extraPerson;
+	}
+
+	public double getSpecialEquip() {
+		return specialEquip;
+	}
+
+	public void setSpecialEquip(double specialEquip) {
+		this.specialEquip = specialEquip;
+	}
+
+	public double getLaborCharge() {
+		return laborCharge;
+	}
+
+	public void setLaborCharge(double laborCharge) {
+		this.laborCharge = laborCharge;
+	}
+
+	public double getStorage() {
+		return storage;
+	}
+
+	public void setStorage(double storage) {
+		this.storage = storage;
+	}
+//	
+//	public double getTotalPrice() {
+//		return totalPrice;
 //	}
+//
+//	public void setTotalPrice(double totalPrice) {
+//		this.totalPrice = totalPrice;
+//	}
+//
+	public double totalCalculation() {		
+		return towingFee + mileageFee;
+	}
 }
