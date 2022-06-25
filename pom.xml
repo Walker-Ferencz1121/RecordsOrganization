@@ -44,7 +44,13 @@
         <!--<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.okta.spring</groupId>
+			<artifactId>okta-spring-boot-starter</artifactId>
+			<version>1.3.0</version>
 		</dependency>-->
+		
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-devtools</artifactId>
@@ -66,11 +72,6 @@
             <artifactId>jquery</artifactId>
             <version>3.6.0</version>
         </dependency>
-        <!--<dependency>
-        <groupId>org.webjars</groupId>
-	    <artifactId>jquery</artifactId>
-	    <version>3.4.1</version>--> <!--Delete this if no longer using!-->
-        <!--</dependency>-->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
@@ -79,7 +80,7 @@
         <dependency>
         	<groupId>org.webjars</groupId>
         	<artifactId>webjars-locator-core</artifactId>
-        </dependency>
+        </dependency>       
         
         <dependency>
             <groupId>net.sourceforge.tess4j</groupId>
@@ -94,6 +95,16 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-surefire-plugin</artifactId>
+		        <configuration>
+		            <skipTests>false</skipTests>
+		            <testFailureIgnore>true</testFailureIgnore>
+		            <forkMode>once</forkMode>
+		        </configuration>
+			</plugin> 
 		</plugins>
 	</build>
 	

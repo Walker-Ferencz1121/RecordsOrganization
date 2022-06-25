@@ -68,17 +68,17 @@ public class Records {
 	@Column(name = "mileage_fee")
 	private double mileageFee;
 	
-	@Column(name = "extra_person")
-	private double extraPerson;
-	
-	@Column(name = "special_equip")
-	private double specialEquip;
-	
-	@Column(name = "labor_charge")
-	private double laborCharge;
-	
-	@Column(name = "storage")
-	private double storage;
+//	@Column(name = "extra_person")
+//	private double extraPerson;
+//	
+//	@Column(name = "special_equip")
+//	private double specialEquip;
+//	
+//	@Column(name = "labor_charge")
+//	private double laborCharge;
+//	
+//	@Column(name = "storage")
+//	private double storage;
 	
 //	@Column(name = "total_price")
 //	private double totalPrice;
@@ -111,10 +111,10 @@ public class Records {
 		this.extraText = extraText;
 		this.towingFee = towingFee;
 		this.mileageFee = mileageFee;
-		this.extraPerson = extraPerson;
-		this.specialEquip = specialEquip;
-		this.laborCharge = laborCharge;
-		this.storage = storage;
+//		this.extraPerson = extraPerson;
+//		this.specialEquip = specialEquip;
+//		this.laborCharge = laborCharge;
+//		this.storage = storage;
 //		this.totalPrice = totalPrice;
 	}
 
@@ -264,37 +264,37 @@ public class Records {
 		this.mileageFee = mileageFee;
 	}
 
-	public double getExtraPerson() {
-		return extraPerson;
-	}
-
-	public void setExtraPerson(double extraPerson) {
-		this.extraPerson = extraPerson;
-	}
-
-	public double getSpecialEquip() {
-		return specialEquip;
-	}
-
-	public void setSpecialEquip(double specialEquip) {
-		this.specialEquip = specialEquip;
-	}
-
-	public double getLaborCharge() {
-		return laborCharge;
-	}
-
-	public void setLaborCharge(double laborCharge) {
-		this.laborCharge = laborCharge;
-	}
-
-	public double getStorage() {
-		return storage;
-	}
-
-	public void setStorage(double storage) {
-		this.storage = storage;
-	}
+//	public double getExtraPerson() {
+//		return extraPerson;
+//	}
+//
+//	public void setExtraPerson(double extraPerson) {
+//		this.extraPerson = extraPerson;
+//	}
+//
+//	public double getSpecialEquip() {
+//		return specialEquip;
+//	}
+//
+//	public void setSpecialEquip(double specialEquip) {
+//		this.specialEquip = specialEquip;
+//	}
+//
+//	public double getLaborCharge() {
+//		return laborCharge;
+//	}
+//
+//	public void setLaborCharge(double laborCharge) {
+//		this.laborCharge = laborCharge;
+//	}
+//
+//	public double getStorage() {
+//		return storage;
+//	}
+//
+//	public void setStorage(double storage) {
+//		this.storage = storage;
+//	}
 //	
 //	public double getTotalPrice() {
 //		return totalPrice;
