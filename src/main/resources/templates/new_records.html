@@ -16,6 +16,7 @@
 			<h2>Save Records</h2>
 
 			<form action="#" th:action="@{/saveRecords}" th:object="${records}" method="POST">
+<!--             <form action="#" th:action="@{/newTotal}" th:object="${records}" method="GET"> -->
 
 				<input type="text" th:field="*{firstName}" placeholder="First Name" class="form-control mb-4 col-4">
 
@@ -46,7 +47,7 @@
 
 				<input type="text" th:field="*{opSignature}" placeholder="Operator Signature" class="form-control mb-4 col-4">
 
-				<button type="submit" id=button1 class="btn btn-info col-2"> Save Records</button>
+				<button type="submit" id=button1 class="btn btn-info col-2">Total Prices</button>
 			</form>
 
 			<hr>

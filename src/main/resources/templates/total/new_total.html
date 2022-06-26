@@ -12,7 +12,8 @@
 			<h1>Total Table</h1>
 			<hr>
 
-			<form action="#" th:action="@{/saveTotal}" th:object="${total}" method="POST">
+			<form action="#" th:action="@{/saveTotal}" th:object="${records}" method="POST">
+<!--             <form action="#" th:action="@{/saveRecords}" th:object="${records}" method="POST"> -->
 
 				<h5>Towing Fee</h5>
 				<input type="text" th:field="*{towingFee}" class="form-control mb-4 col-4">
@@ -39,7 +40,7 @@
 <!-- 						<option value="Check">Check</option> -->
 <!-- 					</select> -->
 
-				<button type="submit" id=button1 class="btn btn-info col-2"> Save Records</button>
+				<button type="submit" id=button1 class="btn btn-info col-2">Save Records</button>
 			</form>
 
 			<hr>
