@@ -17,7 +17,13 @@
 
 				<!-- Add hidden form field to handle update -->
 				<input type="hidden" th:field="*{id}" />
-
+				<input type="hidden" th:field="*{towingFee}" />
+				<input type="hidden" th:field="*{mileageFee}" />
+				<input type="hidden" th:field="*{extraPerson}" />
+				<input type="hidden" th:field="*{specialEquip}" />
+				<input type="hidden" th:field="*{laborCharge}" />
+				<input type="hidden" th:field="*{storage}" />
+				
                 <h5>First Name</h5>
 				<input type="text" th:field="*{firstName}" class="form-control mb-4 col-4">
 
@@ -69,7 +75,7 @@
 
 			<hr>
 
-			<a th:href = "@{/}"> Back to Records List</a>
+			<a th:href = "@{/}">Back to Records List</a>
 		</div>
 	</body>
 </html>

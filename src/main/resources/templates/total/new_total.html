@@ -12,8 +12,23 @@
 			<h1>Total Table</h1>
 			<hr>
 
-<!-- 			<form action="#" th:action="@{/saveTotal}" th:object="${records}" method="POST"> -->
-            <form action="#" th:action="@{/saveTotal/{id} (id=${records.id})}" th:object="${records}" method="POST">
+			<form action="#" th:action="@{/saveRecords}" th:object="${records}" method="POST">
+
+				<!-- hidden fields to handle update -->
+				<input type="hidden" th:field="*{id}" />
+				<input type="hidden" th:field="*{firstName}" />				
+				<input type="hidden" th:field="*{lastName}" />				
+				<input type="hidden" th:field="*{storageStart}" />				
+				<input type="hidden" th:field="*{storageEnd}" />				
+				<input type="hidden" th:field="*{phoneNum}" />				
+				<input type="hidden" th:field="*{vehLocation}" />				
+				<input type="hidden" th:field="*{vehYear}" />
+				<input type="hidden" th:field="*{vehMake}" />
+				<input type="hidden" th:field="*{vehModel}" />
+				<input type="hidden" th:field="*{vehColor}" />
+				<input type="hidden" th:field="*{vehIdNum}" />
+				<input type="hidden" th:field="*{vehTowedTo}" />
+				<input type="hidden" th:field="*{opSignature}" />
 
 				<h5>Towing Fee</h5>
 				<input type="text" th:field="*{towingFee}" class="form-control mb-4 col-4">
@@ -21,31 +36,31 @@
 				<h5>Mileage Fee</h5>
 				<input type="text" th:field="*{mileageFee}" class="form-control mb-4 col-4">
 				
-<!-- 				<h5>Extra Person</h5> -->
-<!-- 				<input type="number" th:field="*{extraPerson}" class="form-control mb-4 col-4"> -->
+				<h5>Extra Person</h5>
+				<input type="text" th:field="*{extraPerson}" class="form-control mb-4 col-4">
 				
-<!-- 				<h5>Special Equipment</h5> -->
-<!-- 				<input type="number" th:field="*{specialEquip}" class="form-control mb-4 col-4"> -->
+				<h5>Special Equipment</h5>
+				<input type="text" th:field="*{specialEquip}" class="form-control mb-4 col-4">
 				
-<!-- 				<h5>Labor Charge</h5> -->
-<!-- 				<input type="number" th:field="*{laborCharge}" class="form-control mb-4 col-4"> -->
+				<h5>Labor Charge</h5>
+				<input type="text" th:field="*{laborCharge}" class="form-control mb-4 col-4">
 				
-<!-- 				<h5>Storage</h5> -->
-<!-- 				<input type="number" th:field="*{storage}" class="form-control mb-4 col-4"> -->
+				<h5>Storage</h5>
+				<input type="text" th:field="*{storage}" class="form-control mb-4 col-4">
 
-<!-- 					<select name="payment" id="payment" th:field="*{payment}"> -->
-<!-- 						<option value="">Payment Type</option> -->
-<!-- 						<option value="Cash">Cash</option> -->
-<!-- 						<option value="Credit">Credit</option> -->
-<!-- 						<option value="Check">Check</option> -->
-<!-- 					</select> -->
+					<select name="payment" id="payment" th:field="*{payment}">
+						<option value="">Payment Type</option>
+						<option value="Cash">Cash</option>
+						<option value="Credit">Credit</option>
+						<option value="Check">Check</option>
+					</select>
 
 				<button type="submit" id=button1 class="btn btn-info col-2">Save Records</button>
 			</form>
 
 			<hr>
 
-			<a  th:href = "@{/totalTable}"> Back to Records List</a>
+			<a  th:href = "@{/}"> Back to Records List</a>
 		</div>
 	</body>
 </html>

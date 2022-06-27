@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/CSS/style.css" />
         
-<!--         <script src="/JS/phoneNumber.js"></script>        -->
     </head>
 	<body>
 		<div class="container">
@@ -16,43 +15,49 @@
 			<h2>Save Records</h2>
 
 			<form action="#" th:action="@{/saveRecords}" th:object="${records}" method="POST">
-<!--             <form action="#" th:action="@{/newTotal}" th:object="${records}" method="GET"> -->
 
-				<input type="text" th:field="*{firstName}" placeholder="First Name" class="form-control mb-4 col-4">
+                <h5>First Name</h5>
+				<input type="text" th:field="*{firstName}" class="form-control mb-4 col-4">
 
-				<input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control mb-4 col-4">
+                <h5>Last Name</h5>
+				<input type="text" th:field="*{lastName}" class="form-control mb-4 col-4">
 
-				<h5>Start Date</h5>
+                <h5>Storage Start Date</h5>
 				<input type="date" th:field="*{storageStart}" class="form-control mb-4 col-4">
 
-				<h5>End Date</h5>
-				<input type="date" th:field="*{storageEnd}" class="form-control mb-4 col-4">
+                <h5>Storage End Date</h5>
+                <input type="date" th:field="*{storageEnd}" class="form-control mb-4 col-4">
 
-				<input type="text" th:field="*{phoneNum}" placeholder="Client Phone Number" class="form-control mb-4 col-4 date-format">
+                <h5>Client Phone Number</h5>
+				<input type="text" th:field="*{phoneNum}" class="form-control mb-4 col-4">
 
-				<input type="text" th:field="*{vehLocation}" placeholder="Location of Vehicle" class="form-control mb-4 col-4">
+                <h5>Vehicle Location</h5>
+				<input type="text" th:field="*{vehLocation}" class="form-control mb-4 col-4">
 
-				<input type="text" th:field="*{vehYear}" placeholder="Year of Vehicle" class="form-control mb-4 col-4">
+                <h5>Vehicle Year</h5>
+				<input type="text" th:field="*{vehYear}" class="form-control mb-4 col-4">
 
-				<!-- Potential drop down box for make and model --> <!-- Customer didn't want drop down boxes but they are possible -->
-				<input type="text" th:field="*{vehMake}" placeholder="Vehicle Make" class="form-control mb-4 col-4">
+                <h5>Vehicle Make</h5>
+				<input type="text" th:field="*{vehMake}" class="form-control mb-4 col-4">
 
-				<input type="text" th:field="*{vehModel}" placeholder="Vehicle Model" class="form-control mb-4 col-4">
+                <h5>Vehicle Model</h5>
+				<input type="text" th:field="*{vehModel}" class="form-control mb-4 col-4">
 
-				<input type="text" th:field="*{vehColor}" placeholder="Vehicle Color" class="form-control mb-4 col-4">
+                <h5>Vehicle Color</h5>
+				<input type="text" th:field="*{vehColor}" class="form-control mb-4 col-4">
 
-				<input type="text" th:field="*{vehIdNum}" placeholder="Vehicle ID Number" class="form-control mb-4 col-4">
+                <h5>Vehicle ID Number</h5>
+				<input type="text" th:field="*{vehIdNum}" class="form-control mb-4 col-4">
 
-				<input type="text" th:field="*{vehTowedTo}" placeholder="Vehicle Towed To" class="form-control mb-4 col-4">
+                <h5>Location Vehicle Towed To</h5>
+				<input type="text" th:field="*{vehTowedTo}" class="form-control mb-4 col-4">
 
-				<input type="text" th:field="*{opSignature}" placeholder="Operator Signature" class="form-control mb-4 col-4">
-
-<!--                 <a th:href="@{/saveTotal/{id} (id=${records.id})}" type=button class=btn>Save Records</a> -->
-				<button type="submit" id=button1 class="btn btn-info col-2">Total Prices</button>
+                <h5>Operator Signature</h5>
+				<input type="text" th:field="*{opSignature}" class="form-control mb-4 col-4">
+				
+				<button type="submit" id=button1 class="btn btn-info col-2">Submit New Record</button>
 			</form>
-
 			<hr>
-
 			<a  th:href = "@{/}"> Back to Records List</a>
 		</div>
 	</body>

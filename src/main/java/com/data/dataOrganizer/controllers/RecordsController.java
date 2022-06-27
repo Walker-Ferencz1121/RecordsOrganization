@@ -19,12 +19,6 @@ public class RecordsController {
 
 	@Autowired
 	private RecordsService recordsService;
-		
-	// display list of records
-//	@GetMapping("/")
-//	public String viewHomePage(Model model) {
-//		return findPaginated(1, "firstName", "asc", model);		
-//	}
 	
 	@GetMapping("/")
 	public String viewHomePage(Model model) {
@@ -60,7 +54,6 @@ public class RecordsController {
 		recordsService.saveRecords(records);
 		
 		return "redirect:/";
-//		return "/total/new_total";
 	}
 	
 	@GetMapping("/updateRecord/{id}")
@@ -108,12 +101,11 @@ public class RecordsController {
 		return "/total/new_total";
 	}
 	
-	@PostMapping("/saveTotal/{id}")
-	public String saveTotal(@ModelAttribute("records") Records records) {
-		// save records to database
-		recordsService.saveRecords(records);
-		return "redirect:/";
-	}
+	// display list of records
+//	@GetMapping("/")
+//	public String viewHomePage(Model model) {
+//		return findPaginated(1, "firstName", "asc", model);		
+//	}
 	
 //	@GetMapping("/page/{pageNo}")
 //	public String findPaginated(@PathVariable (value = "pageNo") int pageNo, 
