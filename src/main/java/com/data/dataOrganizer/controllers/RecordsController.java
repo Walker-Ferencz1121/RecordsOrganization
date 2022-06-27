@@ -107,7 +107,7 @@ public class RecordsController {
 		return "/total/new_total";
 	}
 	
-	@PostMapping("/saveTotal/{id}")
+	@PostMapping("/saveTotal")
 	public String saveTotal(@ModelAttribute("records") Records records) {
 		// save records to database
 		recordsService.saveRecords(records);
