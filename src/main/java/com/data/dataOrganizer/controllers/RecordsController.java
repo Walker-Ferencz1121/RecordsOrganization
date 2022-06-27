@@ -58,8 +58,9 @@ public class RecordsController {
 	public String saveRecords(@ModelAttribute("records") Records records) {
 		//save records to database
 		recordsService.saveRecords(records);
-		//return "redirect:/";
-		return "/total/new_total";
+		
+		return "redirect:/";
+//		return "/total/new_total";
 	}
 	
 	@GetMapping("/updateRecord/{id}")
@@ -88,15 +89,15 @@ public class RecordsController {
 		return "redirect:/";
 	}
 	
-//	@GetMapping("/newTotal")
-//	public String newTotal(Model model) {
-//		// create model attribute to bind form data
-//		Records records = new Records();
-//		
-//		model.addAttribute("records", records);
-//		
-//		return "/total/new_total";
-//	}
+	@GetMapping("/newTotal")
+	public String newTotal(Model model) {
+		// create model attribute to bind form data
+		Records records = new Records();
+		
+		model.addAttribute("records", records);
+		
+		return "/total/new_total";
+	}
 	
 	@GetMapping("/saveTotal/{id}")
 	public String saveTotal(@PathVariable (value="id") long id, Model model) {
@@ -107,7 +108,7 @@ public class RecordsController {
 		return "/total/new_total";
 	}
 	
-	@PostMapping("/saveTotal")
+	@PostMapping("/saveTotal/{id}")
 	public String saveTotal(@ModelAttribute("records") Records records) {
 		// save records to database
 		recordsService.saveRecords(records);

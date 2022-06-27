@@ -12,8 +12,8 @@
 			<h1>Total Table</h1>
 			<hr>
 
-			<form action="#" th:action="@{/saveTotal}" th:object="${records}" method="POST">
-<!--             <form action="#" th:action="@{/saveRecords}" th:object="${records}" method="POST"> -->
+<!-- 			<form action="#" th:action="@{/saveTotal}" th:object="${records}" method="POST"> -->
+            <form action="#" th:action="@{/saveTotal/{id} (id=${records.id})}" th:object="${records}" method="POST">
 
 				<h5>Towing Fee</h5>
 				<input type="text" th:field="*{towingFee}" class="form-control mb-4 col-4">

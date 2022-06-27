@@ -38,6 +38,7 @@
 						<th>Phone Number</th>
 						<th>mileage</th>
 						<th>Total</th>
+						<th>Total Calculation</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
@@ -48,6 +49,7 @@
 						<td th:text="${records.phoneNum}"></td>
 						<td th:text="${records.mileageFee}"></td>
                         <td th:text="${records.totalCalculation()}"></td>
+                        <td><a th:href="@{/saveTotal/{id} (id=${records.id})}" type=button class="btn">Total</a></td>
 						<td><a th:href="@{/updateRecord/{id}(id=${records.id})}"type=button class="btn">Update</a>
 						    <a th:href="@{/deleteRecord/{id}(id=${records.id})}"type=button class="btn" onclick="if (!confirm('Are you sure?')) { return false }">Delete</a>
 						</td>
