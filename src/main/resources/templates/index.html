@@ -40,8 +40,8 @@
 				</thead>
 				<tbody>
 					<tr th:each="records : ${listRecords}">
-					    <td><a th:href="@{/extraInfo/{id} (id=${records.id})}" th:text="${records.firstName + ' ' + records.lastName}"></a></td>
-						<td th:text="${records.storageStart}"></td>
+					    <td th:text="${records.firstName + ' ' + records.lastName}"></td>
+						<td><a th:href="@{/extraInfo/{id} (id=${records.id})}" th:text="${records.storageStart}"></a></td>
 						<td th:text="${records.phoneNum}"></td>
                     	<td th:text="${records.totalCalculation()}"></td>
 	                    <td><a th:href="@{/saveTotal/{id} (id=${records.id})}" type=button class="btn">Total</a></td>
